@@ -36,24 +36,15 @@ This was the only required OS package.
 
 Only 3 modules were required in Kali 2018.2. To install those use “pip3 install” as shown below:
 
+Update from 2024: I had the foresight to write this in Python3. But not that OSes would move to their own package manager to maintain requirements.
+I found that this worked for me when I needed it now. I had to use a venv and then install the requirements in there.
+
 ```bash
-pip3 install cmd2
-pip3 install tqdm
-pip3 install gin
-```
-
-All other libraries had already been installed. If you want to use this on another base OS then you may also require these which can also be installed using pip3:
-
-```
-argparse
-colorama
-click
-requests
-tempfile
-shutil
-itertools
-ssl
-tabulate
+apt install python3.11-venv
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 ```
 ## Usage
 
